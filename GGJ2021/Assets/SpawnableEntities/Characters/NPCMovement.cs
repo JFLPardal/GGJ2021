@@ -98,6 +98,16 @@ public class NPCMovement : MonoBehaviour
         return current_control_point_id < 0;
     }
 
+    protected bool IsGoingRight()
+    {
+        return direction.x >= 0.0f && direction.x <= 1.0f;
+    }
+
+    protected bool IsGoingLeft()
+    {
+        return direction.x >= -1.0f && direction.x < 0.0f;
+    }
+
     protected virtual void UpdateAnimator()
     {
         if(m_Animator != null)
@@ -106,11 +116,11 @@ public class NPCMovement : MonoBehaviour
 
     protected virtual void UpdateSpriteFacingDirection()
     {
-        if (direction == Vector2.right)
+        if (IsGoingRight())
         {
             m_SpriteRenderer.flipX = false;
         }
-        else if(direction == Vector2.left)
+        else if(IsGoingLeft())
         {
             m_SpriteRenderer.flipX = true;
         }

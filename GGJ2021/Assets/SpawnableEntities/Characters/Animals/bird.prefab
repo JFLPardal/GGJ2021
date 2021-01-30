@@ -91,11 +91,12 @@ GameObject:
   m_Component:
   - component: {fileID: 8518746628168298620}
   - component: {fileID: 9041496599304016419}
-  - component: {fileID: 8110235211920617391}
   - component: {fileID: 8538762242446345502}
   - component: {fileID: -8900577240629097418}
+  - component: {fileID: -4409477915963055240}
   - component: {fileID: 2738007717362968183}
   - component: {fileID: 497558944607695279}
+  - component: {fileID: 3930111970424322306}
   m_Layer: 10
   m_Name: bird
   m_TagString: Animal
@@ -168,23 +169,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &8110235211920617391
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6559343275708988753}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 63705a8352e489a49878a58594007c31, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 2
-  direction: {x: 1, y: 0}
-  Control_Points:
-  - {fileID: 0}
-  - {fileID: 0}
 --- !u!114 &8538762242446345502
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -210,6 +194,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 529bdbcdb3b38384d948db77ed710f90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-4409477915963055240
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6559343275708988753}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88fd21394283bc746a3f92a2edcda83e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 2
+  direction: {x: 1, y: 0}
+  Control_Points: []
 --- !u!58 &2738007717362968183
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -247,3 +246,22 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!95 &3930111970424322306
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6559343275708988753}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 32a4ed6d72e10974999626a08f433873, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
