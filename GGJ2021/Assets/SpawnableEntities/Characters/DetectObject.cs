@@ -6,13 +6,6 @@ using UnityEngine;
 public abstract class DetectObject : MonoBehaviour
 {
     protected CircleCollider2D circle_collider = null;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        circle_collider = GetComponent<CircleCollider2D>();
-        circle_collider.radius = 4;
-    }
     
     private void OnTriggerStay2D(Collider2D collider)
     {

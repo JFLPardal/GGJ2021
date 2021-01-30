@@ -12,11 +12,7 @@ public abstract class NPCMovement : MonoBehaviour
     protected SpriteRenderer m_SpriteRenderer = null;
     protected Animator m_Animator = null;
 
-    private Vector2 _direction = Vector2.right;
-    public Vector2 direction {
-        get { return _direction; }
-        private set => _direction = value;
-    }
+    public Vector2 direction = Vector2.right;
 
     [SerializeField]
     private List<GameObject> Control_Points;
@@ -39,7 +35,6 @@ public abstract class NPCMovement : MonoBehaviour
     {
         UpdateAnimator();
         UpdateSpriteFacingDirection();
-        UpdateMovementDirection();
     }
 
     private void FixedUpdate()
@@ -57,6 +52,7 @@ public abstract class NPCMovement : MonoBehaviour
         if(Vector2.Distance(current_control_point.transform.position, m_rb.position) > 0.5f) {
             var control_point_v2 = new Vector2(current_control_point.transform.position.x, current_control_point.transform.position.y);
             direction = (control_point_v2 - m_rb.position).normalized;
+            Debug.Log("move: " + direction);
             Vector2 velocity = direction * speed;
             m_rb.MovePosition(m_rb.position + velocity * Time.deltaTime);
         }
@@ -115,13 +111,5 @@ public abstract class NPCMovement : MonoBehaviour
         {
             m_SpriteRenderer.flipX = true;
         }
-    }
-
-    protected virtual void UpdateMovementDirection()
-    {
-        if (m_SpriteRenderer.flipX)
-            direction = Vector2.left;
-        else
-            direction = Vector2.right;
     }
 }

@@ -47,7 +47,7 @@ public class BBMovement : NPCMovement
 
     private void Follow()
     {
-        var direction = (followTo - m_rb.position).normalized;
+        direction = (followTo - m_rb.position).normalized;
         Vector2 velocity = direction * follow_speed;
         m_rb.MovePosition(m_rb.position + velocity * Time.deltaTime);
     }

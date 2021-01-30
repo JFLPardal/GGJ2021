@@ -13,6 +13,8 @@ public class BBDetectCollision : DetectObject
     {
         movementClass = GetComponent<BBMovement>();
         m_rb = GetComponent<Rigidbody2D>();
+        circle_collider = GetComponent<CircleCollider2D>();
+        circle_collider.radius = 4;
     }
 
     protected override void HandleCollision(Collider2D collider)
@@ -35,4 +37,20 @@ public class BBDetectCollision : DetectObject
         movementClass.StopFollowing();
     }
 
+    private void OnDrawGizmos()
+    {
+        float angle = 45.0f;
+        float rayRange = 5.0f;
+        float halfFOV = angle / 2.0f;
+
+        Quaternion upRayRotation = Quaternion.AngleAxis(-halfFOV, Vector3.forward);
+        Quaternion downRayRotation = Quaternion.AngleAxis(halfFOV, Vector3.forward);
+
+        Vector3 upRayDirection = upRayRotation * movementClass.direction * rayRange;
+        Vector3 downRayDirection = downRayRotation * movementClass.direction * rayRange;
+
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawRay(transform.position, upRayDirection);
+        Gizmos.DrawRay(transform.position, downRayDirection);
+    }
 }
