@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Animal
   layers:
   - Default
   - TransparentFX
@@ -15,7 +16,7 @@ TagManager:
   - 
   - Player
   - BB
-  - 
+  - Animals
   - 
   - 
   - 
@@ -52,6 +53,7 @@ TagManager:
     locked: 0
   - name: BB
     uniqueID: 583093925
+    locked: 0
   - name: HUD
     uniqueID: 1255131713
     locked: 0

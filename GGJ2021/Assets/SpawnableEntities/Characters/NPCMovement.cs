@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class NPCMovement : MonoBehaviour
+public class NPCMovement : MonoBehaviour
 {
     [SerializeField]
     private float speed = 2.0f;
@@ -57,8 +57,13 @@ public abstract class NPCMovement : MonoBehaviour
         }
         else
         {
-            UpdateNextControlPoint();
+            OnReachedControlPoint();
         }
+    }
+
+    protected virtual void OnReachedControlPoint()
+    {
+        UpdateNextControlPoint();
     }
 
     private void UpdateNextControlPoint()
@@ -68,8 +73,7 @@ public abstract class NPCMovement : MonoBehaviour
             ++current_control_point_id;
             if (ReachedEndOfControlPoints())
             {
-                move_forward = false;
-                current_control_point_id = Control_Points.Count - 2;
+                OnReachedEndOfControlPoints();
             }
         }
         else
@@ -77,8 +81,7 @@ public abstract class NPCMovement : MonoBehaviour
             --current_control_point_id;
             if (ReachedBeginningOfControlPoints())
             {
-                move_forward = true;
-                current_control_point_id = 1;
+                OnReachedBeginningOfControlPoints();
             }
         }
 
@@ -97,7 +100,8 @@ public abstract class NPCMovement : MonoBehaviour
 
     protected virtual void UpdateAnimator()
     {
-        m_Animator.SetBool(animator_bool_isWalking, true);
+        if(m_Animator != null)
+            m_Animator.SetBool(animator_bool_isWalking, true);
     }
 
     protected virtual void UpdateSpriteFacingDirection()
@@ -110,5 +114,17 @@ public abstract class NPCMovement : MonoBehaviour
         {
             m_SpriteRenderer.flipX = true;
         }
+    }
+
+    protected virtual void OnReachedEndOfControlPoints()
+    {
+        move_forward = false;
+        current_control_point_id = Control_Points.Count - 2;
+    }
+
+    protected virtual void OnReachedBeginningOfControlPoints()
+    {
+        move_forward = true;
+        current_control_point_id = 1;
     }
 }
