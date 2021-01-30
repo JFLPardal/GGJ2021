@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 
 public class Movement : MonoBehaviour
 {
-    [SerializeField] [Range(2, 10)] float MoveSpeed = 3;
+    [SerializeField] [Range(5, 20)] float MoveSpeed = 10;
 
     private string animator_bool_isWalking = "isWalking";
     private Rigidbody2D m_rb = null;
