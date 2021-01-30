@@ -7,7 +7,7 @@ public class Movement : MonoBehaviour
 {
     [SerializeField] [Range(5, 20)] float MoveSpeed = 10;
 
-    private string animator_bool_isWalking = "isWalking";
+    private const string animator_bool_isWalking = "isWalking";
     private Rigidbody2D m_rb = null;
     private SpriteRenderer m_SpriteRenderer = null;
     private Animator m_Animator = null;
