@@ -52,7 +52,6 @@ public abstract class NPCMovement : MonoBehaviour
         if(Vector2.Distance(current_control_point.transform.position, m_rb.position) > 0.5f) {
             var control_point_v2 = new Vector2(current_control_point.transform.position.x, current_control_point.transform.position.y);
             direction = (control_point_v2 - m_rb.position).normalized;
-            Debug.Log("move: " + direction);
             Vector2 velocity = direction * speed;
             m_rb.MovePosition(m_rb.position + velocity * Time.deltaTime);
         }

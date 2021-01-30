@@ -35,6 +35,11 @@ public class BBMovement : NPCMovement
         {
             base.Move();
         }
+
+        if(IsFollowing() && IsCloseTo())
+        {
+            //trigger game over event
+        }
     }
 
     protected override void UpdateAnimator()
