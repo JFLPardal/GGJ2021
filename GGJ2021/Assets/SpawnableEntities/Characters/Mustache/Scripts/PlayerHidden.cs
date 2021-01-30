@@ -8,7 +8,8 @@ public class PlayerHidden : MonoBehaviour
 
     private Movement movement = null;
     private SpriteRenderer spriteRenderer = null;
-    private new CircleCollider2D collider = null;
+    private CircleCollider2D collider = null;
+    private Rigidbody2D rb = null;
     private bool is_hidden = false;
     private Vector2 position_to_reveal = Vector2.zero;
     private GameObject objectHidOn = null;
@@ -22,6 +23,7 @@ public class PlayerHidden : MonoBehaviour
         movement = GetComponent<Movement>();
         collider = GetComponent<CircleCollider2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        rb = GetComponent<Rigidbody2D>();
     }
 
     public void AllowReveal(Vector2 position)
@@ -38,6 +40,7 @@ public class PlayerHidden : MonoBehaviour
     public void HideOn(GameObject obj)
     {
         Debug.Log("hide");
+        rb.velocity = Vector2.zero;
         movement.enabled = false;
         collider.enabled = false;
         spriteRenderer.enabled = false;
