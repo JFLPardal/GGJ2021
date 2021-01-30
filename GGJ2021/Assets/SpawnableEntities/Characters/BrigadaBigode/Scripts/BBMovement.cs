@@ -30,10 +30,14 @@ public class BBMovement : NPCMovement
 
     protected override void Move()
     {
-        if(IsFollowing())
+        if (IsFollowing())
+        {
             Follow();
+        }
         else
+        {
             base.Move();
+        }
     }
 
     private void Follow()
@@ -55,7 +59,7 @@ public class BBMovement : NPCMovement
 
     private bool IsCloseTo()
     {
-        return Vector2.Distance(m_rb.position, followTo) <= min_distance_to_catch;
+        return IsFollowing() && Vector2.Distance(m_rb.position, followTo) <= min_distance_to_catch;
     }
 
     private void SetObjectIsInSight()
