@@ -11,9 +11,12 @@ GameObject:
   - component: {fileID: 6259412038990848200}
   - component: {fileID: 6259412038990848201}
   - component: {fileID: 6259412038990848206}
+  - component: {fileID: 1773604473531520551}
+  - component: {fileID: -4999090979459606912}
   - component: {fileID: 6259412038990848203}
   - component: {fileID: 6259412038990848202}
   - component: {fileID: 6259412038990848181}
+  - component: {fileID: 341973615476186655}
   m_Layer: 8
   m_Name: Mustache
   m_TagString: Player
@@ -69,6 +72,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MoveSpeed: 5
+--- !u!114 &1773604473531520551
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6259412038990848207}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9aedc09cd90977e4e83055a07b5ef40a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-4999090979459606912
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6259412038990848207}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aff0aed8eaf55f14e9d5bc07ea8991b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  can_reveal: 0
 --- !u!114 &6259412038990848203
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -115,7 +143,18 @@ MonoBehaviour:
     m_ActionId: 9fea74ee-7ae5-489d-a267-615ee9d69ac5
     m_ActionName: Player/Look[/Mouse/delta]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1773604473531520551}
+        m_MethodName: Attach
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 8aabeca6-c1f1-4820-8fec-11f043056c21
     m_ActionName: Player/Fire[/Mouse/leftButton]
   - m_PersistentCalls:
@@ -158,6 +197,21 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: f9348388-54cf-4923-9f4d-55a094b5ff4e
     m_ActionName: UI/TrackedDeviceOrientation
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: -4999090979459606912}
+        m_MethodName: Reveal
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: a40951dc-ce41-4620-8c31-8c65671219e0
+    m_ActionName: Player/Reveal[/Keyboard/leftShift]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: Keyboard&Mouse
   m_DefaultActionMap: Player
@@ -200,7 +254,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -2137627795
-  m_SortingLayer: 1
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: d7752b672a65c7344b3011eb1dc8410c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -232,3 +286,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!58 &341973615476186655
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6259412038990848207}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 3.565
