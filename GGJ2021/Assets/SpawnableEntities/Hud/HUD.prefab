@@ -590,6 +590,8 @@ GameObject:
   - component: {fileID: 4375831410225201660}
   - component: {fileID: 4375831410225201658}
   - component: {fileID: 4375831410225201659}
+  - component: {fileID: 813487973139491877}
+  - component: {fileID: 8697508371648210720}
   m_Layer: 5
   m_Name: Panel
   m_TagString: HUD
@@ -656,6 +658,39 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &813487973139491877
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4375831410225201661}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab08953a643397943823eeff2e5871e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_FoundOwner: 0
+  m_Arrested: 0
+--- !u!95 &8697508371648210720
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4375831410225201661}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c1f5ec3f59af3b44583eb61212b9d247, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &4375831410658087366
 GameObject:
   m_ObjectHideFlags: 0
@@ -888,7 +923,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &7544361419732905201
 RectTransform:
   m_ObjectHideFlags: 0
