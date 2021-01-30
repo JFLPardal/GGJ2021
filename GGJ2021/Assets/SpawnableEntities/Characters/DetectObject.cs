@@ -5,7 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(CircleCollider2D))]
 public abstract class DetectObject : MonoBehaviour
 {
-    private CircleCollider2D circle_collider = null;
+    protected CircleCollider2D circle_collider = null;
 
     // Start is called before the first frame update
     void Start()
@@ -14,7 +14,7 @@ public abstract class DetectObject : MonoBehaviour
         circle_collider.radius = 4;
     }
     
-    private void OnTriggerEnter2D(Collider2D collider)
+    private void OnTriggerStay2D(Collider2D collider)
     {
         HandleCollision(collider);
     }

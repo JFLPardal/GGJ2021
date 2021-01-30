@@ -4,17 +4,19 @@ using UnityEngine;
 
 public abstract class NPCMovement : MonoBehaviour
 {
-
+    [SerializeField]
     private float speed = 2.0f;
 
-    private string animator_bool_isWalking = "isWalking";
+    protected string animator_bool_isWalking = "isWalking";
     protected Rigidbody2D m_rb = null;
     protected SpriteRenderer m_SpriteRenderer = null;
     protected Animator m_Animator = null;
 
-    private Vector2 direction = Vector2.right;
-    private Vector2 starting_position = Vector2.zero;
-    private float distance = 10.0f;
+    private Vector2 _direction = Vector2.right;
+    public Vector2 direction {
+        get { return _direction; }
+        private set => _direction = value;
+    }
 
     [SerializeField]
     private List<GameObject> Control_Points;
@@ -29,7 +31,6 @@ public abstract class NPCMovement : MonoBehaviour
         m_rb = GetComponent<Rigidbody2D>();
         m_SpriteRenderer = GetComponent<SpriteRenderer>();
         m_Animator = GetComponent<Animator>();
-        starting_position = m_rb.position;
         current_control_point = Control_Points[current_control_point_id];
     }
 
@@ -106,9 +107,13 @@ public abstract class NPCMovement : MonoBehaviour
 
     protected virtual void UpdateSpriteFacingDirection()
     {
-        if (Vector2.Distance(starting_position, m_rb.position) > distance)
+        if (direction == Vector2.right)
         {
-            m_SpriteRenderer.flipX = !m_SpriteRenderer.flipX;
+            m_SpriteRenderer.flipX = false;
+        }
+        else if(direction == Vector2.left)
+        {
+            m_SpriteRenderer.flipX = true;
         }
     }
 

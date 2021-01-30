@@ -20,9 +20,8 @@ public class BBDetectCollision : DetectObject
         var closestPointOfContact = collider.ClosestPoint(m_rb.position);
         var direction = closestPointOfContact - m_rb.position;
         Vector2 normal = direction.normalized;
-        Vector2 vel = m_rb.velocity;
 
-        if (Vector2.Angle(vel, -normal) <= max_angle)
+        if (Vector2.Angle(movementClass.direction, normal) <= max_angle)
         {
             if (collider.tag == "Player")
             {
