@@ -6,7 +6,6 @@ TagManager:
   tags:
   - Fade
   - HUD
-  - Animal
   layers:
   - Default
   - TransparentFX
@@ -18,7 +17,7 @@ TagManager:
   - 
   - Player
   - BB
-  - Animals
+  - 
   - 
   - 
   - 
@@ -55,7 +54,6 @@ TagManager:
     locked: 0
   - name: BB
     uniqueID: 583093925
-    locked: 0
   - name: HUD
     uniqueID: 1255131713
     locked: 0

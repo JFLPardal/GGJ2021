@@ -4,8 +4,6 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Fade
-  - HUD
   - Animal
   layers:
   - Default

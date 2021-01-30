@@ -4,9 +4,12 @@
 TagManager:
   serializedVersion: 2
   tags:
+<<<<<<< HEAD
   - Fade
   - HUD
+=======
   - Animal
+>>>>>>> 6d920dfdcfd3fef90baac56f47b66e2062a1aedb
   layers:
   - Default
   - TransparentFX
