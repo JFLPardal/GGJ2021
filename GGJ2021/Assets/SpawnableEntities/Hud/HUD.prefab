@@ -386,6 +386,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4375831409937861997}
   - component: {fileID: 4375831409937861996}
+  - component: {fileID: 1795271064833228355}
+  - component: {fileID: 7800546956120126178}
   m_Layer: 5
   m_Name: Mustacheometer
   m_TagString: Untagged
@@ -412,7 +414,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
   m_AnchoredPosition: {x: 0, y: 65.3}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 150, y: 75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &4375831409937861996
 MonoBehaviour:
@@ -427,9 +429,45 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_MustacheMovement: {fileID: 0}
-  m_OwnerPosition: {fileID: 0}
   m_LeftAnimator: {fileID: 4375831409648905640}
   m_RightAnimator: {fileID: 4375831410658087364}
+--- !u!222 &1795271064833228355
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4375831409937861998}
+  m_CullTransparentMesh: 0
+--- !u!114 &7800546956120126178
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4375831409937861998}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: da2a03b91ab0d304d9ecc2af2e2923e6, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &4375831409987422429
 GameObject:
   m_ObjectHideFlags: 0
@@ -568,7 +606,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -719306811063730613, guid: b715c740514b1cc40848e0efc01eaebb,
+  m_Sprite: {fileID: 7023212993604223561, guid: ae17b310294ffbe489c0d1661c5990dd,
     type: 3}
   m_Type: 0
   m_PreserveAspect: 1
@@ -672,6 +710,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_FoundOwner: 0
   m_Arrested: 0
+  m_GameIsOver: 0
 --- !u!95 &8697508371648210720
 Animator:
   serializedVersion: 3
@@ -894,7 +933,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -719306811063730613, guid: b715c740514b1cc40848e0efc01eaebb,
+  m_Sprite: {fileID: 7023212993604223561, guid: ae17b310294ffbe489c0d1661c5990dd,
     type: 3}
   m_Type: 0
   m_PreserveAspect: 1

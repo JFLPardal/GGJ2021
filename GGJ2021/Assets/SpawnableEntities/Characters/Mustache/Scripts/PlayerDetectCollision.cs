@@ -6,6 +6,7 @@ using UnityEngine.InputSystem;
 public class PlayerDetectCollision : DetectObject
 {
     [SerializeField] private float distance_to_be_arrested = 3f;
+    [SerializeField] private float distance_to_owner = 6f;
 
     private bool can_attach = false;
     private bool can_enter = false;
@@ -62,7 +63,7 @@ public class PlayerDetectCollision : DetectObject
         if(collider.GetComponent<Mustacheless>() != null && !game_over_animations.IsGameOver())
         {
             var OwnerMustacheDistance = Mathf.Abs(Vector2.Distance(collider.gameObject.transform.position, transform.position));
-            if (OwnerMustacheDistance < distance_to_be_arrested)
+            if (OwnerMustacheDistance < distance_to_owner)
             {
                 game_over_animations.GameOverFromFoundOwnerCollision();
             }
@@ -98,7 +99,7 @@ public class PlayerDetectCollision : DetectObject
         }
         else if(can_enter && !is_inside)
         {
-            GetComponent<InsideHouseTrigger>().TriggerOpenHouse();
+            GetComponent<InsideHouseTrigger>().TriggerOpenHouse(house_entered);
             GetComponent<SpriteRenderer>().sortingLayerName = "InsideHouse";
             transform.position = new Vector2(-23, -8);
             is_inside = true;
@@ -108,7 +109,6 @@ public class PlayerDetectCollision : DetectObject
         {
             GetComponent<InsideHouseTrigger>().TriggerLeaveHouse();
             GetComponent<SpriteRenderer>().sortingLayerName = "Player";
-            Debug.Log(house_entered.name);
             transform.position = house_entered.transform.position + new Vector3(0,-2,0);
             is_inside = false;
             time_left_house = Time.realtimeSinceStartup;
