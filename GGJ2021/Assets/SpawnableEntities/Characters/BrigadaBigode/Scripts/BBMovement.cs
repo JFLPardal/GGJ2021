@@ -6,7 +6,9 @@ public class BBMovement : NPCMovement
 {
     private Vector2 followTo = Vector2.zero;
     private float min_distance_to_catch = 2.0f;
-    [SerializeField] private float follow_speed = 3.5f;
+    [SerializeField] private float follow_speed = 3.5f; 
+    private bool triggerStopFollowing = false;
+    private bool triggerFollow = false;
     private int stopped_colliding_interval_sec = 2;
     private int stopped_following_interval_sec = 2;
     private float initial_time_stopped_following = 0.0f;
@@ -30,16 +32,25 @@ public class BBMovement : NPCMovement
         if (IsFollowing() && !IsCloseTo())
         {
             Follow();
-            GetComponent<BBEventSystem>().TriggerBBFollowing();
-            
+            if (triggerFollow)
+            {
+                GetComponent<BBEventSystem>().TriggerBBFollowing();
+                triggerFollow = false;
+            }
+            triggerStopFollowing = true;
         }
-        else if(!StoppedFollowingCooldown())
+        else if (!StoppedFollowingCooldown())
         {
             base.Move();
-            GetComponent<BBEventSystem>().TriggerBBStoppedFollowing();
+            if (triggerStopFollowing)
+            {
+                GetComponent<BBEventSystem>().TriggerBBStoppedFollowing();
+                triggerStopFollowing = false;
+            }
+            triggerFollow = true;
         }
 
-        if(IsFollowing() && IsCloseTo())
+        if (IsFollowing() && IsCloseTo())
         {
             //trigger game over event
         }
