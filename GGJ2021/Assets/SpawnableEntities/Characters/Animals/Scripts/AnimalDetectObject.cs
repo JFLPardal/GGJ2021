@@ -40,7 +40,6 @@ public class AnimalDetectObject : DetectObject
 
     public bool CanInteractMustache()
     {
-        Debug.Log("can_attach_mustache: " + can_attach_detach);
         return can_attach_detach;
     }
 }

@@ -30,10 +30,13 @@ public class BBMovement : NPCMovement
         if (IsFollowing() && !IsCloseTo())
         {
             Follow();
+            GetComponent<BBEventSystem>().TriggerBBFollowing();
+            
         }
         else if(!StoppedFollowingCooldown())
         {
             base.Move();
+            GetComponent<BBEventSystem>().TriggerBBStoppedFollowing();
         }
 
         if(IsFollowing() && IsCloseTo())

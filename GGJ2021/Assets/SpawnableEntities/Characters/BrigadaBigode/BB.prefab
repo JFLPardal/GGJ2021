@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 7210370742629095123}
   - component: {fileID: 7210370742629095120}
   - component: {fileID: 7210370742629095126}
+  - component: {fileID: 8499019532856363543}
   m_Layer: 9
   m_Name: BB
   m_TagString: Untagged
@@ -169,3 +170,45 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2008a82ba2cf1444e9d3b5e434d5c7ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &8499019532856363543
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7210370742629095129}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d464078e35f9ee6449c3ea9460d65742, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BB_Following:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: -4208678173510460963, guid: a706d234703ec604a8c736ab7f48fed2,
+          type: 3}
+        m_MethodName: LockDoor
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  BB_Stopped_Following:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: -4208678173510460963, guid: a706d234703ec604a8c736ab7f48fed2,
+          type: 3}
+        m_MethodName: UnlockDoor
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
