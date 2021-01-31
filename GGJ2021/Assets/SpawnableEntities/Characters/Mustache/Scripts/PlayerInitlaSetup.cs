@@ -9,7 +9,11 @@ public class PlayerInitlaSetup : MonoBehaviour
     private float interval_is_wet = 5.0f;
     private float init_is_wet = 0.0f;
     private bool can_move = false;
+    [SerializeField]
+    private AudioSource sourceDrop;
 
+    [SerializeField]
+    private AudioSource sourceSplash;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,6 +22,7 @@ public class PlayerInitlaSetup : MonoBehaviour
         m_Animator.SetBool("isWet", true);
         droplets = transform.GetChild(0).gameObject;
         droplets.GetComponent<Animator>().SetBool("isWet", true);
+        
     }
 
     // Update is called once per frame
@@ -28,6 +33,10 @@ public class PlayerInitlaSetup : MonoBehaviour
             m_Animator.SetBool("isWet", false);
             droplets.GetComponent<Animator>().SetBool("isWet", false);
             can_move = true;
+            sourceDrop.Stop();
+            sourceDrop.loop = false;
+            sourceSplash.Stop();
+            sourceSplash.loop = false;
         }
     }
 

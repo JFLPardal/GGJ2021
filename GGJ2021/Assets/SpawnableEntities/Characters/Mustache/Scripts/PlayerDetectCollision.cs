@@ -58,6 +58,7 @@ public class PlayerDetectCollision : DetectObject
             if (BBMustacheDistance < distance_to_be_arrested)
             {
                 game_over_animations.GameOverFromBBCollision();
+                collider.GetComponent<BBMovement>().found = true;
             }
         }
         if(collider.GetComponent<Mustacheless>() != null && !game_over_animations.IsGameOver())
