@@ -9,19 +9,24 @@ public class GameState : MonoBehaviour
     [SerializeField] private bool m_IsGameOver = false;
     [SerializeField] private Canvas m_FadeCanvas = null;
     [SerializeField] private GameObject m_HUDToShowAfterFade = null;
+    [SerializeField] private GameOverHUDAnimations m_GameOverHUDAnimations = null;
     [SerializeField] private Button m_RestartButton = null;
 
     [SerializeField][Range(1.5f, 4)] private float m_ScalingFactor = 2f;
     [SerializeField][Range(1.5f, 4)] private float m_ScalingDuration = 1.5f;
+
+    private bool m_FirstGameOver = true;
+
     const string tag_HudToShowAfterFade = "HUD";
     const string tag_FadeCanvas = "Fade";
 
     void Update()
     {
-        if(m_IsGameOver)
+        m_IsGameOver = m_GameOverHUDAnimations.IsGameOver();
+        if(m_IsGameOver && m_FirstGameOver)
         {
             FadeToBlack();
-            m_IsGameOver = false;
+            m_FirstGameOver = false;
         }
     }
 

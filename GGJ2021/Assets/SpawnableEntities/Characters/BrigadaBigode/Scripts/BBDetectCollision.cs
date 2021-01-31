@@ -7,7 +7,7 @@ public class BBDetectCollision : DetectObject
 
     private BBMovement movementClass = null;
     private Rigidbody2D m_rb = null;
-    private float max_angle = 45.0f;
+    [SerializeField] private float max_angle = 45.0f;
 
     private void Start()
     {

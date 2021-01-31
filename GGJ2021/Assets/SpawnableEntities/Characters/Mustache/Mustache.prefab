@@ -189,6 +189,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9aedc09cd90977e4e83055a07b5ef40a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  distance_to_be_arrested: 2
 --- !u!114 &-4999090979459606912
 MonoBehaviour:
   m_ObjectHideFlags: 0

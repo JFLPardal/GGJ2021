@@ -6,6 +6,7 @@ public class GameOverHUDAnimations : MonoBehaviour
 {
     [SerializeField] private bool m_FoundOwner = false;
     [SerializeField] private bool m_Arrested = false;
+    [SerializeField] private bool m_GameIsOver = false;
 
     const string animator_trigger_foundOwner = "FoundOwner";
     const string animator_trigger_arrested = "Arrested";
@@ -30,4 +31,16 @@ public class GameOverHUDAnimations : MonoBehaviour
             m_Arrested = false;
         }
     }
+    public void GameOverFromBBCollision()
+    {
+        m_Arrested = true;
+        m_GameIsOver = true;
+    }
+    public void GameOverFromFoundOwnerCollision()
+    {
+        m_FoundOwner = true;
+        m_GameIsOver = true;
+    }
+
+    public bool IsGameOver() { return m_GameIsOver; }
 }
