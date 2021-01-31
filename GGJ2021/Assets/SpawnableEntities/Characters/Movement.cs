@@ -23,10 +23,13 @@ public class Movement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        m_rb.velocity = velocity;
+        if (GetComponent<PlayerInitlaSetup>().CanStartMoving())
+        {
+            m_rb.velocity = velocity;
 
-        UpdateAnimator();
-        UpdateFacingDirection();
+            UpdateAnimator();
+            UpdateFacingDirection();
+        }
     }
 
     private void UpdateAnimator()
@@ -52,6 +55,10 @@ public class Movement : MonoBehaviour
 
     public void Move(InputAction.CallbackContext context)
     {
-        velocity = context.ReadValue<Vector2>() * MoveSpeed;
+        if (GetComponent<PlayerInitlaSetup>().CanStartMoving())
+        {
+            velocity = context.ReadValue<Vector2>() * MoveSpeed;
+            GetComponent<PlayerInitlaSetup>().HideDroplets();
+        }
     }
 }

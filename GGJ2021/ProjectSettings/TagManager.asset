@@ -8,6 +8,8 @@ TagManager:
   - HUD
   - Animal
   - ControlPoint
+  - Building
+  - InsideBuilding
   layers:
   - Default
   - TransparentFX
@@ -56,6 +58,9 @@ TagManager:
     locked: 0
   - name: BB
     uniqueID: 583093925
+    locked: 0
+  - name: InsideHouse
+    uniqueID: 2920948791
     locked: 0
   - name: HUD
     uniqueID: 1255131713
