@@ -7,7 +7,7 @@ public class PlayerDetectCollision : DetectObject
 {
 
     private bool can_attach = false;
-    private bool can_enter = true;
+    private bool can_enter = false;
     private bool can_leave = false;
     private GameObject object_to_attach = null;
     private GameObject house_entered = null;
@@ -74,7 +74,7 @@ public class PlayerDetectCollision : DetectObject
         }
         else if(can_enter && !is_inside)
         {
-            GetComponent<InsideHouseTrigger>().TriggerOpenHouse();
+            GetComponent<InsideHouseTrigger>().TriggerOpenHouse(house_entered);
             GetComponent<SpriteRenderer>().sortingLayerName = "InsideHouse";
             transform.position = new Vector2(-21,-25);
             is_inside = true;
@@ -84,7 +84,6 @@ public class PlayerDetectCollision : DetectObject
         {
             GetComponent<InsideHouseTrigger>().TriggerLeaveHouse();
             GetComponent<SpriteRenderer>().sortingLayerName = "Player";
-            Debug.Log(house_entered.name);
             transform.position = house_entered.transform.position + new Vector3(0,-2,0);
             is_inside = false;
             time_left_house = Time.realtimeSinceStartup;
