@@ -14,6 +14,12 @@ public class BBMovement : NPCMovement
     private bool is_seeing_object = false;
     private bool stop_moving = false;
 
+    private bool triggerStopFollowing = false;
+    private bool triggerFollow = false;
+    private bool found = false;
+    [SerializeField]
+    private AudioSource source;
+
     public void StartFollowing(Vector2 position)
     {
         followTo = position;
@@ -27,21 +33,34 @@ public class BBMovement : NPCMovement
 
     protected override void HandleMovement()
     {
-        if (IsFollowing() && !IsCloseTo())
+        if (!found)
         {
-            Follow();
-            GetComponent<BBEventSystem>().TriggerBBFollowing();
-            
-        }
-        else if(!StoppedFollowingCooldown())
-        {
-            base.Move();
-            GetComponent<BBEventSystem>().TriggerBBStoppedFollowing();
-        }
+            if (IsFollowing() && !IsCloseTo())
+            {
+                Follow();
+                if (triggerFollow)
+                {
+                    source.Play();
+                    GetComponent<BBEventSystem>().TriggerBBFollowing();
+                    triggerFollow = false;
+                }
+                triggerStopFollowing = true;
 
+            }
+            else if (!StoppedFollowingCooldown())
+            {
+                base.Move();
+                if (triggerStopFollowing)
+                {
+                    GetComponent<BBEventSystem>().TriggerBBStoppedFollowing();
+                    triggerStopFollowing = false;
+                }
+                triggerFollow = true;
+            }
+        }
         if(IsFollowing() && IsCloseTo())
         {
-            //trigger game over event
+            found = true; 
         }
     }
 

@@ -8,6 +8,10 @@ public class GameOverHUDAnimations : MonoBehaviour
     [SerializeField] private bool m_Arrested = false;
     [SerializeField] private bool m_GameIsOver = false;
 
+    private AudioSource source;
+    [SerializeField] private AudioClip win;
+    [SerializeField] private AudioClip lose;
+
     const string animator_trigger_foundOwner = "FoundOwner";
     const string animator_trigger_arrested = "Arrested";
 
@@ -16,6 +20,7 @@ public class GameOverHUDAnimations : MonoBehaviour
     void Start()
     {
         m_Animator = GetComponent<Animator>();
+        source = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -24,11 +29,15 @@ public class GameOverHUDAnimations : MonoBehaviour
         {
             m_Animator.SetTrigger(animator_trigger_foundOwner);
             m_FoundOwner = false;
+            source.clip = win;
+            source.Play();
         }
         else if(m_Arrested)
         {
             m_Animator.SetTrigger(animator_trigger_arrested);
             m_Arrested = false;
+            source.clip = lose;
+            source.Play();
         }
     }
     public void GameOverFromBBCollision()

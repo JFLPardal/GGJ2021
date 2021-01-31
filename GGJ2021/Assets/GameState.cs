@@ -20,6 +20,13 @@ public class GameState : MonoBehaviour
     const string tag_HudToShowAfterFade = "HUD";
     const string tag_FadeCanvas = "Fade";
 
+    private AudioSource source;
+
+    private void Start()
+    {
+        source = GetComponent<AudioSource>();
+    }
+
     void Update()
     {
         m_IsGameOver = m_GameOverHUDAnimations.IsGameOver();
@@ -34,7 +41,8 @@ public class GameState : MonoBehaviour
     {
         foreach(var image in m_FadeCanvas.GetComponentsInChildren<Image>())
         {
-            if(image.gameObject.CompareTag(tag_FadeCanvas))
+            source.Stop();
+            if (image.gameObject.CompareTag(tag_FadeCanvas))
             {
                 image.color = Color.black;
                 if(m_HUDToShowAfterFade.CompareTag(tag_HudToShowAfterFade))
