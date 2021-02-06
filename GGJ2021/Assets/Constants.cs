@@ -36,6 +36,8 @@ namespace Utils
         public static string inside_building_tag = "InsideBuilding";
         public static string animal_tag = "Animal";
         public static string building_tag = "Building";
+        public static string owner_tag = "Owner";
+        public static string hud_tag = "HUD";
 
     }
 }

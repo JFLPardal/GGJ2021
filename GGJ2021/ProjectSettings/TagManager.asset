@@ -10,6 +10,7 @@ TagManager:
   - ControlPoint
   - Building
   - InsideBuilding
+  - Owner
   layers:
   - Default
   - TransparentFX

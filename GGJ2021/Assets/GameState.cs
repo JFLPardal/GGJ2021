@@ -17,7 +17,7 @@ namespace GameControl
 
     public class GameState : MonoBehaviour
     {
-        [SerializeField] private bool m_IsGameOver = false;
+        private static bool m_IsGameOver = false;
         [SerializeField] private Canvas m_FadeCanvas = null;
         [SerializeField] private GameObject m_HUDToShowAfterFade = null;
         [SerializeField] private GameOverHUDAnimations m_GameOverHUDAnimations = null;
@@ -26,8 +26,9 @@ namespace GameControl
         [SerializeField] [Range(1.5f, 4)] private float m_ScalingFactor = 2f;
         [SerializeField] [Range(1.5f, 4)] private float m_ScalingDuration = 1.5f;
 
-        private State game_state = State.MainMenu;
-        private bool m_FirstGameOver = true;
+        private static State game_state = State.MainMenu;
+        private static bool m_FirstGameOver = true;
+        private static bool changed_scene = false;
         private AudioSource source;
         private GenerateOwner generateOwnerClass;
 
@@ -39,8 +40,38 @@ namespace GameControl
 
         void Update()
         {
-            if (game_state == State.InGame)
+            if (changed_scene && SceneManager.GetActiveScene().buildIndex == 1)
+            {
+                Debug.Log("reload");
+                SetNecessaryObjects();
+                generateOwnerClass.OnStartGame();
+                changed_scene = false;
+            }
+
+            if (game_state == State.InGame && !changed_scene)
+            {
+                //Debug.Log("handle in game");
                 HandleInGameLoop();
+                if(m_FadeCanvas == null) //need to check this, make sure everything has the proper game object
+                {
+                    SetNecessaryObjects();
+                    generateOwnerClass.OnStartGame();
+                }
+                //Debug.Log(m_FadeCanvas == null);
+                //Debug.Log(m_HUDToShowAfterFade == null);
+                //Debug.Log(m_RestartButton == null);
+                //Debug.Log(m_GameOverHUDAnimations == null);
+            }
+
+        }
+
+        private void SetNecessaryObjects()
+        {
+            m_FadeCanvas = (Canvas)FindObjectOfType(typeof(Canvas));
+            m_HUDToShowAfterFade = GameObject.FindGameObjectWithTag(Constants.hud_tag);
+            m_RestartButton = (Button)FindObjectOfType(typeof(Button));
+            m_GameOverHUDAnimations = (GameOverHUDAnimations)FindObjectOfType(typeof(GameOverHUDAnimations));
+            m_RestartButton.gameObject.SetActive(false);
         }
 
         private void HandleInGameLoop()
@@ -50,6 +81,8 @@ namespace GameControl
             {
                 FadeToBlack();
                 m_FirstGameOver = false;
+                game_state = State.GameOver;
+                generateOwnerClass.OnGameOver();
             }
         }
 
@@ -78,13 +111,18 @@ namespace GameControl
         public void RestartGame()
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            changed_scene = true;
+            game_state = State.InGame;
+            Debug.Log("restart");
+            m_IsGameOver = false;
+            m_FirstGameOver = true;
         }
 
         public void StartGame()
         {
             SceneManager.LoadScene("Showcase");
             game_state = State.InGame;
-            generateOwnerClass.OnStartGame();
+            changed_scene = true;
         }
     }
 }

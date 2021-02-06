@@ -2445,6 +2445,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameManager
       objectReference: {fileID: 0}
+    - target: {fileID: 9121534270355785338, guid: 9738fdd1194771a498ca1aeebc94189d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9121534270355785339, guid: 9738fdd1194771a498ca1aeebc94189d,
         type: 3}
       propertyPath: m_FadeCanvas
