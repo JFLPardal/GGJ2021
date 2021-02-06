@@ -8,6 +8,7 @@ public class BBDetectCollision : DetectObject
     private BBMovement movementClass = null;
     private Rigidbody2D m_rb = null;
     [SerializeField] private float max_angle = 45.0f;
+    private bool can_follow_player = true;
 
     private void Start()
     {
@@ -25,7 +26,7 @@ public class BBDetectCollision : DetectObject
 
         if (Vector2.Angle(movementClass.direction, normal) <= max_angle)
         {
-            if (collider.tag == "Player")
+            if (collider.tag == "Player" && can_follow_player)
             {
                 movementClass.StartFollowing(collider.transform.position);
             }
@@ -55,5 +56,10 @@ public class BBDetectCollision : DetectObject
             Gizmos.DrawRay(transform.position, upRayDirection);
             Gizmos.DrawRay(transform.position, downRayDirection);
         }
+    }
+
+    public void CanFollowPlayer(bool follow)
+    {
+        can_follow_player = follow;
     }
 }

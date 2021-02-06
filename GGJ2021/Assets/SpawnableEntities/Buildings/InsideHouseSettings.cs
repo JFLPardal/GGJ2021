@@ -18,6 +18,7 @@ public class InsideHouseSettings : MonoBehaviour
 
     public void ShowOwner(GameObject house)
     {
+        if(source == null) source = GetComponent<AudioSource>();
         source.Play();
         house_opened = house;
         owner.SetActive(house_opened.GetComponent<BuildingSettings>().IsOwnerHouse());

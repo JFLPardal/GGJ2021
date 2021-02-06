@@ -634,6 +634,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1773404779}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &162648766 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7210370742629095126, guid: 44764510cdcfda04fb2d0add6e2884c7,
+    type: 3}
+  m_PrefabInstance: {fileID: 1403395790}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2008a82ba2cf1444e9d3b5e434d5c7ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &202465052 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: -4208678173510460963, guid: a706d234703ec604a8c736ab7f48fed2,
@@ -746,6 +758,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a706d234703ec604a8c736ab7f48fed2, type: 3}
+--- !u!114 &220209911 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7210370742629095126, guid: 44764510cdcfda04fb2d0add6e2884c7,
+    type: 3}
+  m_PrefabInstance: {fileID: 1123219869}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2008a82ba2cf1444e9d3b5e434d5c7ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &223139998
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1996,6 +2020,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1985470257}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1090445382 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7210370742629095126, guid: 44764510cdcfda04fb2d0add6e2884c7,
+    type: 3}
+  m_PrefabInstance: {fileID: 759319207}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2008a82ba2cf1444e9d3b5e434d5c7ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1098640254 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3378915594547747748, guid: 350ad18d22d45a24582707aaa7eb4e5e,
@@ -2339,6 +2375,16 @@ PrefabInstance:
       propertyPath: mustacheometer
       value: 
       objectReference: {fileID: 333651456}
+    - target: {fileID: 5314507600578030701, guid: 9738fdd1194771a498ca1aeebc94189d,
+        type: 3}
+      propertyPath: Loop
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5314507600578030701, guid: 9738fdd1194771a498ca1aeebc94189d,
+        type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9121534270355785336, guid: 9738fdd1194771a498ca1aeebc94189d,
         type: 3}
       propertyPath: m_RootOrder
@@ -3096,18 +3142,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 17, y: 1}
   m_EdgeRadius: 0
---- !u!114 &1459960218 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: -6894148815655453121, guid: 8d8bc681dbb3d6c419d252694a9c9532,
-    type: 3}
-  m_PrefabInstance: {fileID: 2459582025438648206}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1459960214}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e09bdf8a43a6288409ea0b7c4d98aaec, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!61 &1459960219
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3854,12 +3888,12 @@ PrefabInstance:
     - target: {fileID: -2237104001382617767, guid: 98f1908de1031ee4882730d366f7c78a,
         type: 3}
       propertyPath: TriggerInsideHouse.m_PersistentCalls.m_Calls.Array.size
-      value: 1
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: -2237104001382617767, guid: 98f1908de1031ee4882730d366f7c78a,
         type: 3}
       propertyPath: TriggerOutsideHouse.m_PersistentCalls.m_Calls.Array.size
-      value: 1
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: -2237104001382617767, guid: 98f1908de1031ee4882730d366f7c78a,
         type: 3}
@@ -3869,16 +3903,46 @@ PrefabInstance:
     - target: {fileID: -2237104001382617767, guid: 98f1908de1031ee4882730d366f7c78a,
         type: 3}
       propertyPath: TriggerInsideHouse.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 1
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: -2237104001382617767, guid: 98f1908de1031ee4882730d366f7c78a,
         type: 3}
       propertyPath: TriggerInsideHouse.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
-      value: 2
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: -2237104001382617767, guid: 98f1908de1031ee4882730d366f7c78a,
+        type: 3}
+      propertyPath: TriggerInsideHouse.m_PersistentCalls.m_Calls.Array.data[3].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: -2237104001382617767, guid: 98f1908de1031ee4882730d366f7c78a,
+        type: 3}
+      propertyPath: TriggerInsideHouse.m_PersistentCalls.m_Calls.Array.data[4].m_Mode
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: -2237104001382617767, guid: 98f1908de1031ee4882730d366f7c78a,
         type: 3}
       propertyPath: TriggerOutsideHouse.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: -2237104001382617767, guid: 98f1908de1031ee4882730d366f7c78a,
+        type: 3}
+      propertyPath: TriggerOutsideHouse.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: -2237104001382617767, guid: 98f1908de1031ee4882730d366f7c78a,
+        type: 3}
+      propertyPath: TriggerOutsideHouse.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: -2237104001382617767, guid: 98f1908de1031ee4882730d366f7c78a,
+        type: 3}
+      propertyPath: TriggerOutsideHouse.m_PersistentCalls.m_Calls.Array.data[3].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: -2237104001382617767, guid: 98f1908de1031ee4882730d366f7c78a,
+        type: 3}
+      propertyPath: TriggerOutsideHouse.m_PersistentCalls.m_Calls.Array.data[4].m_Mode
       value: 6
       objectReference: {fileID: 0}
     - target: {fileID: -2237104001382617767, guid: 98f1908de1031ee4882730d366f7c78a,
@@ -3890,17 +3954,47 @@ PrefabInstance:
         type: 3}
       propertyPath: TriggerInsideHouse.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 1459960218}
+      objectReference: {fileID: 1090445382}
     - target: {fileID: -2237104001382617767, guid: 98f1908de1031ee4882730d366f7c78a,
         type: 3}
       propertyPath: TriggerInsideHouse.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
-      objectReference: {fileID: 1459960218}
+      objectReference: {fileID: 162648766}
+    - target: {fileID: -2237104001382617767, guid: 98f1908de1031ee4882730d366f7c78a,
+        type: 3}
+      propertyPath: TriggerInsideHouse.m_PersistentCalls.m_Calls.Array.data[3].m_Target
+      value: 
+      objectReference: {fileID: 1797789470}
+    - target: {fileID: -2237104001382617767, guid: 98f1908de1031ee4882730d366f7c78a,
+        type: 3}
+      propertyPath: TriggerInsideHouse.m_PersistentCalls.m_Calls.Array.data[4].m_Target
+      value: 
+      objectReference: {fileID: 220209911}
     - target: {fileID: -2237104001382617767, guid: 98f1908de1031ee4882730d366f7c78a,
         type: 3}
       propertyPath: TriggerOutsideHouse.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1459960214}
+    - target: {fileID: -2237104001382617767, guid: 98f1908de1031ee4882730d366f7c78a,
+        type: 3}
+      propertyPath: TriggerOutsideHouse.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1090445382}
+    - target: {fileID: -2237104001382617767, guid: 98f1908de1031ee4882730d366f7c78a,
+        type: 3}
+      propertyPath: TriggerOutsideHouse.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 162648766}
+    - target: {fileID: -2237104001382617767, guid: 98f1908de1031ee4882730d366f7c78a,
+        type: 3}
+      propertyPath: TriggerOutsideHouse.m_PersistentCalls.m_Calls.Array.data[3].m_Target
+      value: 
+      objectReference: {fileID: 1797789470}
+    - target: {fileID: -2237104001382617767, guid: 98f1908de1031ee4882730d366f7c78a,
+        type: 3}
+      propertyPath: TriggerOutsideHouse.m_PersistentCalls.m_Calls.Array.data[4].m_Target
+      value: 
+      objectReference: {fileID: 220209911}
     - target: {fileID: -2237104001382617767, guid: 98f1908de1031ee4882730d366f7c78a,
         type: 3}
       propertyPath: TriggerInsideHouse.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
@@ -3913,22 +4007,62 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -2237104001382617767, guid: 98f1908de1031ee4882730d366f7c78a,
         type: 3}
+      propertyPath: TriggerInsideHouse.m_PersistentCalls.m_Calls.Array.data[3].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -2237104001382617767, guid: 98f1908de1031ee4882730d366f7c78a,
+        type: 3}
+      propertyPath: TriggerInsideHouse.m_PersistentCalls.m_Calls.Array.data[4].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -2237104001382617767, guid: 98f1908de1031ee4882730d366f7c78a,
+        type: 3}
       propertyPath: TriggerInsideHouse.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: SetActive
       objectReference: {fileID: 0}
     - target: {fileID: -2237104001382617767, guid: 98f1908de1031ee4882730d366f7c78a,
         type: 3}
       propertyPath: TriggerInsideHouse.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: ShowOwner
+      value: CanFollowPlayer
       objectReference: {fileID: 0}
     - target: {fileID: -2237104001382617767, guid: 98f1908de1031ee4882730d366f7c78a,
         type: 3}
       propertyPath: TriggerInsideHouse.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
-      value: SetHouseOpened
+      value: CanFollowPlayer
+      objectReference: {fileID: 0}
+    - target: {fileID: -2237104001382617767, guid: 98f1908de1031ee4882730d366f7c78a,
+        type: 3}
+      propertyPath: TriggerInsideHouse.m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
+      value: CanFollowPlayer
+      objectReference: {fileID: 0}
+    - target: {fileID: -2237104001382617767, guid: 98f1908de1031ee4882730d366f7c78a,
+        type: 3}
+      propertyPath: TriggerInsideHouse.m_PersistentCalls.m_Calls.Array.data[4].m_MethodName
+      value: CanFollowPlayer
       objectReference: {fileID: 0}
     - target: {fileID: -2237104001382617767, guid: 98f1908de1031ee4882730d366f7c78a,
         type: 3}
       propertyPath: TriggerOutsideHouse.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -2237104001382617767, guid: 98f1908de1031ee4882730d366f7c78a,
+        type: 3}
+      propertyPath: TriggerOutsideHouse.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -2237104001382617767, guid: 98f1908de1031ee4882730d366f7c78a,
+        type: 3}
+      propertyPath: TriggerOutsideHouse.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -2237104001382617767, guid: 98f1908de1031ee4882730d366f7c78a,
+        type: 3}
+      propertyPath: TriggerOutsideHouse.m_PersistentCalls.m_Calls.Array.data[3].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -2237104001382617767, guid: 98f1908de1031ee4882730d366f7c78a,
+        type: 3}
+      propertyPath: TriggerOutsideHouse.m_PersistentCalls.m_Calls.Array.data[4].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: -2237104001382617767, guid: 98f1908de1031ee4882730d366f7c78a,
@@ -3938,17 +4072,57 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -2237104001382617767, guid: 98f1908de1031ee4882730d366f7c78a,
         type: 3}
+      propertyPath: TriggerOutsideHouse.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: CanFollowPlayer
+      objectReference: {fileID: 0}
+    - target: {fileID: -2237104001382617767, guid: 98f1908de1031ee4882730d366f7c78a,
+        type: 3}
+      propertyPath: TriggerOutsideHouse.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: CanFollowPlayer
+      objectReference: {fileID: 0}
+    - target: {fileID: -2237104001382617767, guid: 98f1908de1031ee4882730d366f7c78a,
+        type: 3}
+      propertyPath: TriggerOutsideHouse.m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
+      value: CanFollowPlayer
+      objectReference: {fileID: 0}
+    - target: {fileID: -2237104001382617767, guid: 98f1908de1031ee4882730d366f7c78a,
+        type: 3}
+      propertyPath: TriggerOutsideHouse.m_PersistentCalls.m_Calls.Array.data[4].m_MethodName
+      value: CanFollowPlayer
+      objectReference: {fileID: 0}
+    - target: {fileID: -2237104001382617767, guid: 98f1908de1031ee4882730d366f7c78a,
+        type: 3}
       propertyPath: TriggerInsideHouse.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -2237104001382617767, guid: 98f1908de1031ee4882730d366f7c78a,
         type: 3}
       propertyPath: TriggerInsideHouse.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_BoolArgument
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -2237104001382617767, guid: 98f1908de1031ee4882730d366f7c78a,
         type: 3}
       propertyPath: TriggerInsideHouse.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_BoolArgument
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -2237104001382617767, guid: 98f1908de1031ee4882730d366f7c78a,
+        type: 3}
+      propertyPath: TriggerOutsideHouse.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -2237104001382617767, guid: 98f1908de1031ee4882730d366f7c78a,
+        type: 3}
+      propertyPath: TriggerOutsideHouse.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -2237104001382617767, guid: 98f1908de1031ee4882730d366f7c78a,
+        type: 3}
+      propertyPath: TriggerOutsideHouse.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -2237104001382617767, guid: 98f1908de1031ee4882730d366f7c78a,
+        type: 3}
+      propertyPath: TriggerOutsideHouse.m_PersistentCalls.m_Calls.Array.data[4].m_Arguments.m_BoolArgument
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -2237104001382617767, guid: 98f1908de1031ee4882730d366f7c78a,
@@ -3964,11 +4138,41 @@ PrefabInstance:
     - target: {fileID: -2237104001382617767, guid: 98f1908de1031ee4882730d366f7c78a,
         type: 3}
       propertyPath: TriggerInsideHouse.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.GameObject, UnityEngine
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: -2237104001382617767, guid: 98f1908de1031ee4882730d366f7c78a,
+        type: 3}
+      propertyPath: TriggerInsideHouse.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: -2237104001382617767, guid: 98f1908de1031ee4882730d366f7c78a,
+        type: 3}
+      propertyPath: TriggerInsideHouse.m_PersistentCalls.m_Calls.Array.data[4].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: -2237104001382617767, guid: 98f1908de1031ee4882730d366f7c78a,
         type: 3}
       propertyPath: TriggerOutsideHouse.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: -2237104001382617767, guid: 98f1908de1031ee4882730d366f7c78a,
+        type: 3}
+      propertyPath: TriggerOutsideHouse.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: -2237104001382617767, guid: 98f1908de1031ee4882730d366f7c78a,
+        type: 3}
+      propertyPath: TriggerOutsideHouse.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: -2237104001382617767, guid: 98f1908de1031ee4882730d366f7c78a,
+        type: 3}
+      propertyPath: TriggerOutsideHouse.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: -2237104001382617767, guid: 98f1908de1031ee4882730d366f7c78a,
+        type: 3}
+      propertyPath: TriggerOutsideHouse.m_PersistentCalls.m_Calls.Array.data[4].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 1773604473531520551, guid: 98f1908de1031ee4882730d366f7c78a,
@@ -4249,6 +4453,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 214807163}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1797789470 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7210370742629095126, guid: 44764510cdcfda04fb2d0add6e2884c7,
+    type: 3}
+  m_PrefabInstance: {fileID: 672023049}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2008a82ba2cf1444e9d3b5e434d5c7ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1855227404 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8786930389361293587, guid: a706d234703ec604a8c736ab7f48fed2,
