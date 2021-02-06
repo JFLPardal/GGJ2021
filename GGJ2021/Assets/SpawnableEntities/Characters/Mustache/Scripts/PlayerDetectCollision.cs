@@ -33,7 +33,6 @@ public class PlayerDetectCollision : DetectObject
 
     protected override void HandleCollision(Collider2D collider)
     {
-        Debug.Log(collider.tag);
         if (collider.tag == "InsideBuilding")
         {
             can_leave = true;
@@ -110,7 +109,7 @@ public class PlayerDetectCollision : DetectObject
         {
             GetComponent<InsideHouseTrigger>().TriggerLeaveHouse();
             GetComponent<SpriteRenderer>().sortingLayerName = "Player";
-            transform.position = house_entered.transform.position + new Vector3(0,-2,0);
+            transform.position = house_entered.transform.position + new Vector3(0,-15,0);
             is_inside = false;
             time_left_house = Time.realtimeSinceStartup;
         }
