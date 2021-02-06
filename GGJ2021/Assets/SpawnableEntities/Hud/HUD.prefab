@@ -712,7 +712,6 @@ MonoBehaviour:
   m_FoundOwner: 0
   m_Arrested: 0
   m_GameIsOver: 0
-  source: {fileID: 6597618429712901859}
   win: {fileID: 8300000, guid: 907a4d4b636944946b953d28d4fbbba1, type: 3}
   lose: {fileID: 8300000, guid: 5ad7141abb6a3ff40908750101b79c1b, type: 3}
 --- !u!95 &8697508371648210720

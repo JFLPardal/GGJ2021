@@ -15,7 +15,16 @@ public class GenerateOwner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        houses = (BuildingDoor[]) FindObjectsOfType(typeof(BuildingDoor));
+        /*houses = (BuildingDoor[]) FindObjectsOfType(typeof(BuildingDoor));
+        ChoseRandomOwnerHouse();
+        SetHouseOnMustacheometer();
+        owner.transform.position = new Vector2(-15, 20);
+        owner.SetActive(false);*/
+    }
+
+    public void OnStartGame()
+    {
+        houses = (BuildingDoor[])FindObjectsOfType(typeof(BuildingDoor));
         ChoseRandomOwnerHouse();
         SetHouseOnMustacheometer();
         owner.transform.position = new Vector2(-15, 20);

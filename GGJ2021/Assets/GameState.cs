@@ -5,60 +5,86 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using Utils;
 
-public class GameState : MonoBehaviour
+namespace GameControl
 {
-    [SerializeField] private bool m_IsGameOver = false;
-    [SerializeField] private Canvas m_FadeCanvas = null;
-    [SerializeField] private GameObject m_HUDToShowAfterFade = null;
-    [SerializeField] private GameOverHUDAnimations m_GameOverHUDAnimations = null;
-    [SerializeField] private Button m_RestartButton = null;
-
-    [SerializeField][Range(1.5f, 4)] private float m_ScalingFactor = 2f;
-    [SerializeField][Range(1.5f, 4)] private float m_ScalingDuration = 1.5f;
-
-    private bool m_FirstGameOver = true;
-
-    private AudioSource source;
-
-    private void Start()
+    public enum State
     {
-        source = GetComponent<AudioSource>();
+        MainMenu,
+        InGame,
+        InMenu,
+        GameOver
     }
 
-    void Update()
+    public class GameState : MonoBehaviour
     {
-        m_IsGameOver = m_GameOverHUDAnimations.IsGameOver();
-        if(m_IsGameOver && m_FirstGameOver)
+        [SerializeField] private bool m_IsGameOver = false;
+        [SerializeField] private Canvas m_FadeCanvas = null;
+        [SerializeField] private GameObject m_HUDToShowAfterFade = null;
+        [SerializeField] private GameOverHUDAnimations m_GameOverHUDAnimations = null;
+        [SerializeField] private Button m_RestartButton = null;
+
+        [SerializeField] [Range(1.5f, 4)] private float m_ScalingFactor = 2f;
+        [SerializeField] [Range(1.5f, 4)] private float m_ScalingDuration = 1.5f;
+
+        private State game_state = State.MainMenu;
+        private bool m_FirstGameOver = true;
+        private AudioSource source;
+        private GenerateOwner generateOwnerClass;
+
+        private void Start()
         {
-            FadeToBlack();
-            m_FirstGameOver = false;
+            source = GetComponent<AudioSource>();
+            generateOwnerClass = GetComponent<GenerateOwner>();
         }
-    }
 
-    private void FadeToBlack()
-    {
-        foreach(var image in m_FadeCanvas.GetComponentsInChildren<Image>())
+        void Update()
         {
-            source.Stop();
-            if (image.gameObject.CompareTag(Constants.tag_FadeCanvas))
+            if (game_state == State.InGame)
+                HandleInGameLoop();
+        }
+
+        private void HandleInGameLoop()
+        {
+            m_IsGameOver = m_GameOverHUDAnimations.IsGameOver();
+            if (m_IsGameOver && m_FirstGameOver)
             {
-                image.color = Color.black;
-                if(m_HUDToShowAfterFade.CompareTag(Constants.tag_HudToShowAfterFade))
+                FadeToBlack();
+                m_FirstGameOver = false;
+            }
+        }
+
+        private void FadeToBlack()
+        {
+            foreach (var image in m_FadeCanvas.GetComponentsInChildren<Image>())
+            {
+                source.Stop();
+                if (image.gameObject.CompareTag(Constants.tag_FadeCanvas))
                 {
-                    Vector3 scalingFactor = new Vector3(m_ScalingFactor, m_ScalingFactor, 1);
-                    LeanTween.scale(m_HUDToShowAfterFade, scalingFactor, m_ScalingDuration);
-                    m_RestartButton.gameObject.SetActive(true);
-                }
-                else
-                {
-                    Debug.LogError("No valid HUD to resize");
+                    image.color = Color.black;
+                    if (m_HUDToShowAfterFade.CompareTag(Constants.tag_HudToShowAfterFade))
+                    {
+                        Vector3 scalingFactor = new Vector3(m_ScalingFactor, m_ScalingFactor, 1);
+                        LeanTween.scale(m_HUDToShowAfterFade, scalingFactor, m_ScalingDuration);
+                        m_RestartButton.gameObject.SetActive(true);
+                    }
+                    else
+                    {
+                        Debug.LogError("No valid HUD to resize");
+                    }
                 }
             }
         }
-    }
 
-    public void RestartGame()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        public void RestartGame()
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
+
+        public void StartGame()
+        {
+            SceneManager.LoadScene("Showcase");
+            game_state = State.InGame;
+            generateOwnerClass.OnStartGame();
+        }
     }
 }
