@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using Utils;
 
 public class GameState : MonoBehaviour
 {
@@ -16,9 +17,6 @@ public class GameState : MonoBehaviour
     [SerializeField][Range(1.5f, 4)] private float m_ScalingDuration = 1.5f;
 
     private bool m_FirstGameOver = true;
-
-    const string tag_HudToShowAfterFade = "HUD";
-    const string tag_FadeCanvas = "Fade";
 
     private AudioSource source;
 
@@ -42,10 +40,10 @@ public class GameState : MonoBehaviour
         foreach(var image in m_FadeCanvas.GetComponentsInChildren<Image>())
         {
             source.Stop();
-            if (image.gameObject.CompareTag(tag_FadeCanvas))
+            if (image.gameObject.CompareTag(Constants.tag_FadeCanvas))
             {
                 image.color = Color.black;
-                if(m_HUDToShowAfterFade.CompareTag(tag_HudToShowAfterFade))
+                if(m_HUDToShowAfterFade.CompareTag(Constants.tag_HudToShowAfterFade))
                 {
                     Vector3 scalingFactor = new Vector3(m_ScalingFactor, m_ScalingFactor, 1);
                     LeanTween.scale(m_HUDToShowAfterFade, scalingFactor, m_ScalingDuration);

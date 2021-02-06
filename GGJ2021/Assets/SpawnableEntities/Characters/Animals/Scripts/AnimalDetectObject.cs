@@ -7,7 +7,6 @@ public class AnimalDetectObject : DetectObject
 
     private DisplayMustache displayMustache;
     private bool can_attach_detach = false;
-    private GameObject player;
 
     private void Start()
     {

@@ -1,12 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Utils;
 
 public class PlayerInitlaSetup : MonoBehaviour
 {
     private GameObject droplets;
     private Animator m_Animator = null;
-    private float interval_is_wet = 5.0f;
     private float init_is_wet = 0.0f;
     private bool can_move = false;
     [SerializeField]
@@ -19,25 +19,29 @@ public class PlayerInitlaSetup : MonoBehaviour
     {
         init_is_wet = Time.realtimeSinceStartup;
         m_Animator = GetComponent<Animator>();
-        m_Animator.SetBool("isWet", true);
+        m_Animator.SetBool(Constants.animator_bool_player_wet, true);
         droplets = transform.GetChild(0).gameObject;
-        droplets.GetComponent<Animator>().SetBool("isWet", true);
-        
+        droplets.GetComponent<Animator>().SetBool(Constants.animator_bool_player_wet, true);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Time.realtimeSinceStartup - init_is_wet >= interval_is_wet)
+        if(Time.realtimeSinceStartup - init_is_wet >= Constants.interval_is_wet)
         {
-            m_Animator.SetBool("isWet", false);
-            droplets.GetComponent<Animator>().SetBool("isWet", false);
+            m_Animator.SetBool(Constants.animator_bool_player_wet, false);
+            droplets.GetComponent<Animator>().SetBool(Constants.animator_bool_player_wet, false);
             can_move = true;
-            sourceDrop.Stop();
-            sourceDrop.loop = false;
-            sourceSplash.Stop();
-            sourceSplash.loop = false;
+            StopDropletsSounds();
         }
+    }
+
+    private void StopDropletsSounds()
+    {
+        sourceDrop.Stop();
+        sourceDrop.loop = false;
+        sourceSplash.Stop();
+        sourceSplash.loop = false;
     }
 
     public bool CanStartMoving()

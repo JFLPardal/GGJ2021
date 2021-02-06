@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 9121534270355785336}
   - component: {fileID: 9121534270355785339}
   - component: {fileID: -3097803650144189594}
-  - component: {fileID: -4646223522286948744}
   - component: {fileID: 5314507600578030701}
   - component: {fileID: 5341216017214153159}
   m_Layer: 0
@@ -68,28 +67,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mustacheometer: {fileID: 0}
   owner: {fileID: 0}
---- !u!114 &-4646223522286948744
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9121534270355785338}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5dfb8a6020da3e944b012f53c865407f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  water_drop: {fileID: 8300000, guid: e319eee1b4442da408422a9cb961226f, type: 3}
-  water_splash: {fileID: 8300000, guid: e4ffb379546d5824580aea9295a7753f, type: 3}
-  win: {fileID: 8300000, guid: 907a4d4b636944946b953d28d4fbbba1, type: 3}
-  lose: {fileID: 8300000, guid: 5ad7141abb6a3ff40908750101b79c1b, type: 3}
-  being_chased: {fileID: 8300000, guid: f97cfce117429ec4696d0edc79cf3b63, type: 3}
-  lock_door: {fileID: 8300000, guid: 7ad8c6cbe67795f41b719574345ac5bf, type: 3}
-  open_door: {fileID: 8300000, guid: 7fbe8fdba3d11284eb95f36b2fad3e01, type: 3}
-  bird_flying: {fileID: 8300000, guid: bcdb629754b57164a8e774c482625a8f, type: 3}
-  bb_whistle: {fileID: 8300000, guid: fa4215c7b06a15f40afa495cb2860a9c, type: 3}
-  sourceEffects: {fileID: 5341216017214153159}
 --- !u!82 &5314507600578030701
 AudioSource:
   m_ObjectHideFlags: 0
@@ -101,10 +78,10 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 889bf6a29fa6bdb4abc543536f6d0958, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
-  Loop: 1
+  Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0

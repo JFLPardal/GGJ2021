@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Utils;
 
 public class OwnerSettings : MonoBehaviour
 {
@@ -8,7 +9,6 @@ public class OwnerSettings : MonoBehaviour
     private Animator m_Animator = null;
     private bool isHappy = false;
     private float init_time_happy;
-    private float interval_happy = 3.0f;
     private void Start()
     {
         m_Animator = GetComponent<Animator>();
@@ -16,9 +16,9 @@ public class OwnerSettings : MonoBehaviour
 
     private void Update()
     {
-        if(Time.realtimeSinceStartup - init_time_happy >= interval_happy)
+        if(Time.realtimeSinceStartup - init_time_happy >= Constants.interval_owner_happy)
         {
-            m_Animator.SetBool("isHappy", false);
+            m_Animator.SetBool(Constants.animator_bool_owner_happy, false);
         }
     }
 
@@ -30,7 +30,7 @@ public class OwnerSettings : MonoBehaviour
 
     public void UpdateAnimation()
     {
-        m_Animator.SetBool("isHappy", true);
+        m_Animator.SetBool(Constants.animator_bool_owner_happy, true);
         isHappy = true; 
         init_time_happy = Time.realtimeSinceStartup;
     }

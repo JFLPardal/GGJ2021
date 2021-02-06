@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Utils;
 
 public class GameOverHUDAnimations : MonoBehaviour
 {
@@ -11,9 +12,6 @@ public class GameOverHUDAnimations : MonoBehaviour
     private AudioSource source;
     [SerializeField] private AudioClip win;
     [SerializeField] private AudioClip lose;
-
-    const string animator_trigger_foundOwner = "FoundOwner";
-    const string animator_trigger_arrested = "Arrested";
 
     private Animator m_Animator = null;
 
@@ -27,14 +25,14 @@ public class GameOverHUDAnimations : MonoBehaviour
     {
         if(m_FoundOwner)
         {
-            m_Animator.SetTrigger(animator_trigger_foundOwner);
+            m_Animator.SetTrigger(Constants.animator_trigger_foundOwner);
             m_FoundOwner = false;
             source.clip = win;
             source.Play();
         }
         else if(m_Arrested)
         {
-            m_Animator.SetTrigger(animator_trigger_arrested);
+            m_Animator.SetTrigger(Constants.animator_trigger_arrested);
             m_Arrested = false;
             source.clip = lose;
             source.Play();

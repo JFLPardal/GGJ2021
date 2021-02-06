@@ -39,7 +39,6 @@ public class PlayerHidden : MonoBehaviour
 
     public void HideOn(GameObject obj)
     {
-        Debug.Log("hide");
         rb.velocity = Vector2.zero;
         movement.enabled = false;
         collider.enabled = false;
@@ -50,7 +49,6 @@ public class PlayerHidden : MonoBehaviour
 
     private void Show()
     {
-        Debug.Log("show");
         if (is_hidden)
         {
             movement.enabled = true;
@@ -63,7 +61,6 @@ public class PlayerHidden : MonoBehaviour
 
     public void Reveal(InputAction.CallbackContext context)
     {
-        Debug.Log("reveal: " + is_hidden + " " + can_reveal);
         if (is_hidden && can_reveal)
         {
             Show();

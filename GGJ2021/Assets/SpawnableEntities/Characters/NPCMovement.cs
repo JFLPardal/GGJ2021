@@ -1,13 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Utils;
 
 public class NPCMovement : MonoBehaviour
 {
     [SerializeField]
     private float speed = 2.0f;
 
-    protected string animator_bool_isWalking = "isWalking";
     protected Rigidbody2D m_rb = null;
     protected SpriteRenderer m_SpriteRenderer = null;
     protected Animator m_Animator = null;
@@ -49,7 +49,7 @@ public class NPCMovement : MonoBehaviour
 
     protected virtual void Move()
     {
-        if(Vector2.Distance(current_control_point.transform.position, m_rb.position) > 0.5f) {
+        if(Vector2.Distance(current_control_point.transform.position, m_rb.position) > Constants.min_dist_bb_to_control_point) {
             var control_point_v2 = new Vector2(current_control_point.transform.position.x, current_control_point.transform.position.y);
             direction = (control_point_v2 - m_rb.position).normalized;
             Vector2 velocity = direction * speed;
@@ -111,7 +111,7 @@ public class NPCMovement : MonoBehaviour
     protected virtual void UpdateAnimator()
     {
         if(m_Animator != null)
-            m_Animator.SetBool(animator_bool_isWalking, true);
+            m_Animator.SetBool(Constants.animator_bool_isWalking, true);
     }
 
     protected virtual void UpdateSpriteFacingDirection()

@@ -1,16 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Utils;
 
 public class BBMovement : NPCMovement
 {
     private Vector2 followTo = Vector2.zero;
-    private float min_distance_to_catch = 2.0f;
     [SerializeField] private float follow_speed = 3.5f; 
     private bool triggerStopFollowing = false;
     private bool triggerFollow = false;
-    private int stopped_colliding_interval_sec = 2;
-    private int stopped_following_interval_sec = 2;
     private float initial_time_stopped_following = 0.0f;
     private float initial_time_stopped_colliding = 0.0f;
     private bool is_seeing_object = false;
@@ -61,7 +59,7 @@ public class BBMovement : NPCMovement
     protected override void UpdateAnimator()
     {
         if(StoppedFollowingCooldown())
-            m_Animator.SetBool(animator_bool_isWalking, false);
+            m_Animator.SetBool(Constants.animator_bool_isWalking, false);
         else
             base.UpdateAnimator();
     }
@@ -81,7 +79,7 @@ public class BBMovement : NPCMovement
         if (is_seeing_object)
             return true;
 
-        var keepFollowing = Time.realtimeSinceStartup - initial_time_stopped_colliding < stopped_colliding_interval_sec;
+        var keepFollowing = Time.realtimeSinceStartup - initial_time_stopped_colliding < Constants.bb_stopped_colliding_interval_sec;
 
         if(!keepFollowing)
         {
@@ -104,14 +102,14 @@ public class BBMovement : NPCMovement
 
     private bool StoppedFollowingCooldown()
     {
-        var remainStopped = Time.realtimeSinceStartup - initial_time_stopped_following < stopped_following_interval_sec;
+        var remainStopped = Time.realtimeSinceStartup - initial_time_stopped_following < Constants.bb_stopped_following_interval_sec;
         if (!remainStopped) stop_moving = false;
         return remainStopped;
     }
 
     private bool IsCloseTo()
     {
-        return Vector2.Distance(m_rb.position, followTo) <= min_distance_to_catch;
+        return Vector2.Distance(m_rb.position, followTo) <= Constants.min_dist_bb_to_catch;
     }
 
     private void SetObjectIsInSight()

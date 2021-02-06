@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Utils;
 
 public class BBDetectCollision : DetectObject
 {
@@ -15,7 +16,7 @@ public class BBDetectCollision : DetectObject
         movementClass = GetComponent<BBMovement>();
         m_rb = GetComponent<Rigidbody2D>();
         circle_collider = GetComponent<CircleCollider2D>();
-        circle_collider.radius = 4;
+        circle_collider.radius = Constants.bb_collision_circle_radius;
     }
 
     protected override void HandleCollision(Collider2D collider)

@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using Utils;
 
 public class Movement : MonoBehaviour
 {
     [SerializeField] [Range(5, 20)] float MoveSpeed = 10;
 
-    private const string animator_bool_isWalking = "isWalking";
     private Rigidbody2D m_rb = null;
     private SpriteRenderer m_SpriteRenderer = null;
     private Animator m_Animator = null;
@@ -35,7 +35,7 @@ public class Movement : MonoBehaviour
     private void UpdateAnimator()
     {
         bool isWalking = (velocity.x != 0 || velocity.y != 0) ? true : false;
-        m_Animator.SetBool(animator_bool_isWalking, isWalking);
+        m_Animator.SetBool(Constants.animator_bool_isWalking, isWalking);
     }
 
     private void UpdateFacingDirection()
