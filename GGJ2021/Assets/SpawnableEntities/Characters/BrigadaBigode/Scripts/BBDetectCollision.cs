@@ -39,18 +39,21 @@ public class BBDetectCollision : DetectObject
 
     private void OnDrawGizmos()
     {
-        float angle = 45.0f;
-        float rayRange = 5.0f;
-        float halfFOV = angle / 2.0f;
+        if (movementClass != null)
+        {
+            float angle = 45.0f;
+            float rayRange = 5.0f;
+            float halfFOV = angle / 2.0f;
 
-        Quaternion upRayRotation = Quaternion.AngleAxis(-halfFOV, Vector3.forward);
-        Quaternion downRayRotation = Quaternion.AngleAxis(halfFOV, Vector3.forward);
+            Quaternion upRayRotation = Quaternion.AngleAxis(-halfFOV, Vector3.forward);
+            Quaternion downRayRotation = Quaternion.AngleAxis(halfFOV, Vector3.forward);
 
-        Vector3 upRayDirection = upRayRotation * movementClass.direction * rayRange;
-        Vector3 downRayDirection = downRayRotation * movementClass.direction * rayRange;
+            Vector3 upRayDirection = upRayRotation * movementClass.direction * rayRange;
+            Vector3 downRayDirection = downRayRotation * movementClass.direction * rayRange;
 
-        Gizmos.color = Color.yellow;
-        Gizmos.DrawRay(transform.position, upRayDirection);
-        Gizmos.DrawRay(transform.position, downRayDirection);
+            Gizmos.color = Color.yellow;
+            Gizmos.DrawRay(transform.position, upRayDirection);
+            Gizmos.DrawRay(transform.position, downRayDirection);
+        }
     }
 }
