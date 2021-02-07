@@ -8,6 +8,12 @@ public class DisplayMustache : MonoBehaviour
     private GameObject mustache;
 
     private GameObject player;
+    private AttachableBehaviour attachableBehaviour;
+
+    private void Start()
+    {
+        attachableBehaviour = GetComponent<AttachableBehaviour>();
+    }
 
     public bool HasMustache()
     {
@@ -16,8 +22,10 @@ public class DisplayMustache : MonoBehaviour
 
     public void AttachMustache()
     {
-        if(mustache != null)
+        if (mustache != null)
+        {
             mustache.SetActive(true);
+        }
     }
 
     public void DettachMustache()
@@ -37,7 +45,8 @@ public class DisplayMustache : MonoBehaviour
     public void AllowPlayerToBeRevealed()
     {
         var position = new Vector2(transform.position.x, transform.position.y - 5);
-        player.GetComponent<PlayerHidden>().AllowReveal(position);
+        if(player != null)
+            player.GetComponent<PlayerHidden>().AllowReveal(position);
     }
 
     public void DontAllowPlayerToBeRevealed()

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Utils;
 
-public class AnimalDetectObject : DetectObject
+public class BushDetectObject : DetectObject
 {
 
     private DisplayMustache displayMustache;
@@ -18,25 +18,15 @@ public class AnimalDetectObject : DetectObject
 
     protected override void HandleCollision(Collider2D collider)
     {
-        if (collider.tag == Constants.control_point_tag)
+        if (collider.tag == Constants.player_tag)
         {
-            if (displayMustache.HasMustache())
-            {
-                displayMustache.AllowPlayerToBeRevealed();
-            }
             attachableBehaviour.SetCanInteract(true);
+            displayMustache.AllowPlayerToBeRevealed();
         }
-            
     }
 
     protected override void HandleStoppedColliding(Collider2D collider)
     {
-        if (collider.tag == Constants.control_point_tag)
-        {
-            if (displayMustache.HasMustache())
-                displayMustache.DontAllowPlayerToBeRevealed();
-            attachableBehaviour.SetCanInteract(false);
-        }
         
     }
 }

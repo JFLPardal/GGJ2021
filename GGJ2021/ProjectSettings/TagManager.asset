@@ -11,6 +11,7 @@ TagManager:
   - Building
   - InsideBuilding
   - Owner
+  - Attachable
   layers:
   - Default
   - TransparentFX

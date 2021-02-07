@@ -38,6 +38,8 @@ namespace Utils
         public static string building_tag = "Building";
         public static string owner_tag = "Owner";
         public static string hud_tag = "HUD";
+        public static string attachable_tag = "Attachable";
+        public static string control_point_tag = "ControlPoint";
 
     }
 }

@@ -94,6 +94,7 @@ GameObject:
   - component: {fileID: 8538762242446345502}
   - component: {fileID: -8900577240629097418}
   - component: {fileID: -4409477915963055240}
+  - component: {fileID: 5762639264692134757}
   - component: {fileID: 2738007717362968183}
   - component: {fileID: 497558944607695279}
   - component: {fileID: 3930111970424322306}
@@ -210,6 +211,18 @@ MonoBehaviour:
   speed: 2
   direction: {x: 1, y: 0}
   Control_Points: []
+--- !u!114 &5762639264692134757
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6559343275708988753}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5eac58eb24193a944bcba908630267cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!58 &2738007717362968183
 CircleCollider2D:
   m_ObjectHideFlags: 0

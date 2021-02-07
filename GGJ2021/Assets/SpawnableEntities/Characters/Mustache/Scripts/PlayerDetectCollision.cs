@@ -31,9 +31,9 @@ public class PlayerDetectCollision : DetectObject
         }
     }
 
-    private void HandleCollisionWithAnimal(Collider2D collider)
+    private void HandleCollisionWithAttachable(Collider2D collider)
     {
-        can_attach = collider.GetComponent<AnimalDetectObject>().CanInteractMustache();
+        can_attach = collider.GetComponent<AttachableBehaviour>().CanInteract();
         object_to_attach = collider.gameObject;
     }
 
@@ -71,9 +71,9 @@ public class PlayerDetectCollision : DetectObject
         {
             can_leave = true;
         }
-        else if (collider.tag == Constants.animal_tag)
+        else if (collider.tag == Constants.animal_tag || collider.tag == Constants.attachable_tag)
         {
-            HandleCollisionWithAnimal(collider);
+            HandleCollisionWithAttachable(collider);
         }
         else if(collider.tag == Constants.building_tag)
         {
@@ -96,7 +96,7 @@ public class PlayerDetectCollision : DetectObject
         {
             can_leave = false;
         }
-        else if (collider.tag == Constants.animal_tag)
+        else if (collider.tag == Constants.animal_tag || collider.tag == Constants.attachable_tag)
         {
             can_attach = false;
             object_to_attach = null;
