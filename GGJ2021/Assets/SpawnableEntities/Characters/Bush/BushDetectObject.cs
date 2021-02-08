@@ -5,14 +5,10 @@ using Utils;
 
 public class BushDetectObject : DetectObject
 {
-
-    private DisplayMustache displayMustache;
     private AttachableBehaviour attachableBehaviour;
-    private bool can_attach_detach = false;
 
     private void Start()
     {
-        displayMustache = GetComponent<DisplayMustache>();
         attachableBehaviour = GetComponent<AttachableBehaviour>();
     }
 
@@ -21,12 +17,16 @@ public class BushDetectObject : DetectObject
         if (collider.tag == Constants.player_tag)
         {
             attachableBehaviour.SetCanInteract(true);
-            displayMustache.AllowPlayerToBeRevealed();
+            attachableBehaviour.HandleCanInteractIndicator();
         }
     }
 
     protected override void HandleStoppedColliding(Collider2D collider)
     {
-        
+        if (collider.tag == Constants.player_tag)
+        {
+            attachableBehaviour.SetCanInteract(false);
+            attachableBehaviour.HandleCanInteractIndicator();
+        }
     }
 }

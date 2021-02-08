@@ -9,6 +9,7 @@ public class PlayerHidden : MonoBehaviour
     private Movement movement = null;
     private SpriteRenderer spriteRenderer = null;
     private CircleCollider2D collider = null;
+    private BoxCollider2D box_collider = null;
     private Rigidbody2D rb = null;
     private bool is_hidden = false;
     private Vector2 position_to_reveal = Vector2.zero;
@@ -22,6 +23,7 @@ public class PlayerHidden : MonoBehaviour
     {
         movement = GetComponent<Movement>();
         collider = GetComponent<CircleCollider2D>();
+        box_collider = GetComponent<BoxCollider2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         rb = GetComponent<Rigidbody2D>();
     }
@@ -42,6 +44,7 @@ public class PlayerHidden : MonoBehaviour
         rb.velocity = Vector2.zero;
         movement.enabled = false;
         collider.enabled = false;
+        box_collider.enabled = false;
         spriteRenderer.enabled = false;
         is_hidden = true;
         objectHidOn = obj;
@@ -53,6 +56,7 @@ public class PlayerHidden : MonoBehaviour
         {
             movement.enabled = true;
             collider.enabled = true;
+            box_collider.enabled = true;
             spriteRenderer.enabled = true;
             transform.position = position_to_reveal;
             is_hidden = true;

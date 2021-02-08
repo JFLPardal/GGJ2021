@@ -23,10 +23,17 @@ public class AnimalDetectObject : DetectObject
             if (displayMustache.HasMustache())
             {
                 displayMustache.AllowPlayerToBeRevealed();
+                attachableBehaviour.SetCanInteract(true);
+                attachableBehaviour.HandleCanInteractIndicator();
             }
-            attachableBehaviour.SetCanInteract(true);
+            else
+                attachableBehaviour.SetCanInteract(true);
         }
-            
+        
+        if(collider.tag == Constants.player_tag)
+        {
+            attachableBehaviour.HandleCanInteractIndicator();
+        }
     }
 
     protected override void HandleStoppedColliding(Collider2D collider)
@@ -35,8 +42,14 @@ public class AnimalDetectObject : DetectObject
         {
             if (displayMustache.HasMustache())
                 displayMustache.DontAllowPlayerToBeRevealed();
+
             attachableBehaviour.SetCanInteract(false);
+            attachableBehaviour.HandleCanInteractIndicator();
         }
-        
+
+        if (collider.tag == Constants.player_tag)
+        {
+            attachableBehaviour.HandleCanInteractIndicator();
+        }
     }
 }

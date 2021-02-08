@@ -13,6 +13,7 @@ namespace Utils
         public static string animator_bool_npc_isWalking = "isWalking";
         public static string animator_bool_player_wet = "isWet";
         public static string animator_bool_owner_happy = "isHappy";
+        public static string animator_bool_is_open = "isOpen";
 
         public static string tag_HudToShowAfterFade = "HUD";
         public static string tag_FadeCanvas = "Fade";

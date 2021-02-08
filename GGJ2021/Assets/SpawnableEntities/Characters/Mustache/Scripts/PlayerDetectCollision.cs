@@ -129,6 +129,8 @@ public class PlayerDetectCollision : DetectObject
     {
         object_to_attach.GetComponent<DisplayMustache>().AttachMustache();
         object_to_attach.GetComponent<DisplayMustache>().SetPlayer(gameObject);
+        if (object_to_attach.tag == Constants.attachable_tag)
+            object_to_attach.GetComponent<DisplayMustache>().AllowPlayerToBeRevealed();
         player_hidden.HideOn(object_to_attach);
     }
 
